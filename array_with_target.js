@@ -23,7 +23,7 @@ const findIndices = (array, target) => {
       const indices = [checkingObject[numberNeeded], i];
       return indices;
     } else {
-      checkingObject[parseInt(array[i])] = i;
+      checkingObject[array[i]] = i;
     }
   }
   return "The target was not reachable with this array.";
