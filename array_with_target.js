@@ -19,13 +19,14 @@ const findIndices = (array, target) => {
   const checkingObject = {};
   for (let i = 0; i < array.length; i++) {
     const numberNeeded = target - array[i];
-    if (checkingObject[numberNeeded] != undefined) {
+    if (checkingObject[numberNeeded] !== undefined) {
       const indices = [checkingObject[numberNeeded], i];
       return indices;
     } else {
       checkingObject[parseInt(array[i])] = i;
     }
   }
+  return "The target was not reachable with this array.";
 };
 
 const arr1 = [2, 7, 11, 15];
@@ -34,6 +35,9 @@ const arr2 = [3, 2, 4];
 const tar2 = 6;
 const arr3 = [3, 3];
 const tar3 = 6;
+const arr4 = [3, 3];
+const tar4 = 20;
 console.log(findIndices(arr1, tar1));
 console.log(findIndices(arr2, tar2));
 console.log(findIndices(arr3, tar3));
+console.log(findIndices(arr4, tar4));
